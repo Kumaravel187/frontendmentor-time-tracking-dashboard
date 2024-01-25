@@ -24,7 +24,7 @@ Users should be able to:
 ### Screenshot
 
 <img src="./time-tracking-desktop.png" alt="desktop view" width="400" height="200" />
-<img src="./time-tracking-mobile.png" alt="mobile view" width="150" height="350" />
+<img src="./time-tracking-mobile.png" alt="mobile view" width="150" height="500" />
 
 ## My process
 
