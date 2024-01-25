@@ -1,0 +1,248 @@
+.main {
+  --pad: 1em; /* Variable for padding */
+  min-height: 100vh;
+  background-color: $Very-dark-blue; /* Custom color variable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--pad);
+
+  .grid-container {
+    display: grid;
+    gap: var(--pad);
+    grid-template-rows: repeat(7, 1fr);
+
+    .article:first-of-type {
+      display: flex;
+      flex-direction: column;
+      width: 20em;
+      border: none;
+      background-color: $Dark-blue; /* Custom color variable */
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      overflow: hidden;
+
+      .report {
+        background-color: $Blue; /* Custom color variable */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5em;
+        padding: 1.75em;
+        color: $Pale-Blue; /* Custom color variable */
+        border-radius: 1em;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+          background-color: lighten($color: $Dark-blue, $amount: 15%);
+        }
+
+        img {
+          width: 4em;
+          border: 1px solid white;
+          border-radius: 50%;
+        }
+
+        .name {
+          font-size: 0.9rem;
+
+          .span {
+            display: block;
+            font-size: 1.25rem;
+            text-transform: capitalize;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .links {
+        background-color: $Dark-blue; /* Custom color variable */
+        padding: 1em;
+        display: flex;
+        justify-content: space-evenly;
+
+        .link {
+          text-decoration: none;
+          color: whitesmoke;
+          text-transform: capitalize;
+          cursor: pointer;
+          transition: all 300ms ease-in-out;
+
+          &:hover {
+            color: $Soft-blue; /* Custom color variable */
+          }
+        }
+      }
+    }
+
+    .article:nth-of-type(2),
+    .article:nth-of-type(3),
+    .article:nth-of-type(4),
+    .article:nth-of-type(5),
+    .article:nth-of-type(6),
+    .article:nth-of-type(7) {
+      background-repeat: no-repeat;
+      background-position: top right;
+      border-radius: 1em;
+      overflow: hidden;
+      display: flex;
+      cursor: pointer;
+      transition: all 300ms ease-in-out;
+
+      &:hover {
+        background-color: yellow;
+      }
+
+      .container {
+        margin-top: auto;
+        height: 80%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5em;
+        padding: 0 2em;
+        border-top-right-radius: 1em;
+        border-top-left-radius: 1em;
+        background-color: $Dark-blue; /* Custom color variable */
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+          background-color: lighten($color: $Dark-blue, $amount: 15%);
+          transform: translateY(-2.75rem);
+        }
+
+        .activity-tab,
+        .time-tab {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: whitesmoke;
+          font-size: 1rem;
+          text-transform: capitalize;
+        }
+
+        .activity-tab {
+          img {
+            height: 0.3em;
+          }
+        }
+
+        .time-tab {
+          font-size: 1.75rem;
+          display: flex;
+
+          .total-time {
+            font-size: 0.8rem;
+            color: $Pale-Blue; /* Custom color variable */
+          }
+        }
+      }
+    }
+
+    .article:nth-of-type(2) {
+      background-image: url("../images/icon-work.svg");
+      background-color: $Light-orange; /* Custom color variable */
+    }
+    .article:nth-of-type(3) {
+      background-image: url("../images/icon-play.svg");
+      background-color: $Soft-blue; /* Custom color variable */
+    }
+    .article:nth-of-type(4) {
+      background-image: url("../images/icon-study.svg");
+      background-color: $Light-red; /* Custom color variable */
+    }
+    .article:nth-of-type(5) {
+      background-image: url("../images/icon-exercise.svg");
+      background-color: $Lime-green; /* Custom color variable */
+    }
+    .article:nth-of-type(6) {
+      background-image: url("../images/icon-social.svg");
+      background-color: $Violet; /* Custom color variable */
+    }
+    .article:nth-of-type(7) {
+      background-image: url("../images/icon-self-care.svg");
+      background-color: $Soft-orange; /* Custom color variable */
+    }
+  }
+}
+
+@media (min-width: 38rem) {
+  .main {
+    .grid-container {
+      max-width: 960px; /* Set a max-width for the grid container */
+      margin: 0 auto;
+      gap: 1.25em;
+      article {
+        width: 13rem;
+        height: 13rem;
+        grid-row: span 2; /* Set the default grid row value for all articles */
+      }
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr 1fr; /* Set two rows for the grid container */
+      align-items: center;
+      justify-items: center; /* adjusted */
+
+      .article:first-of-type {
+        grid-row: span 4; /* Make the first article span two rows */
+        height: 100%;
+        width: 12rem;
+
+        .report {
+          flex-direction: column;
+          flex: 2;
+          padding: 1em;
+          align-items: start;
+          padding: 2em 1em;
+
+          .name {
+            font-size: 0.7rem;
+
+            .span {
+              display: block;
+              font-size: 2rem;
+              text-transform: capitalize;
+              font-weight: 500;
+              line-height: 1.2;
+              margin-top: 0.25em;
+              color: whitesmoke;
+            }
+          }
+        }
+
+        .links {
+          flex-direction: column;
+          flex: 1;
+          font-size: 0.85rem;
+        }
+      }
+
+      .article:nth-of-type(2),
+      .article:nth-of-type(3),
+      .article:nth-of-type(4),
+      .article:nth-of-type(5),
+      .article:nth-of-type(6),
+      .article:nth-of-type(7) {
+        /* You can add specific styling for the other articles if needed */
+
+        .container {
+          padding: 0 1em;
+
+          .time-tab {
+            font-size: 2.5rem;
+            flex-direction: column;
+            align-items: self-start;
+            text-align: left;
+
+            .total-time {
+              font-size: 0.65rem;
+              color: $Pale-Blue; /* Custom color variable */
+            }
+          }
+        }
+      }
+    }
+  }
+}

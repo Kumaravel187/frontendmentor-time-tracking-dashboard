@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,300&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.main {
+  --pad: 1em; /* Variable for padding */
+  min-height: 100vh;
+  background-color: hsl(226, 43%, 10%); /* Custom color variable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--pad);
+}
+.main .grid-container {
+  display: grid;
+  gap: var(--pad);
+  grid-template-rows: repeat(7, 1fr);
+}
+.main .grid-container .article:first-of-type {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  border: none;
+  background-color: hsl(235, 46%, 20%); /* Custom color variable */
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  overflow: hidden;
+}
+.main .grid-container .article:first-of-type .report {
+  background-color: hsl(246, 80%, 60%); /* Custom color variable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  padding: 1.75em;
+  color: hsl(236, 100%, 87%); /* Custom color variable */
+  border-radius: 1em;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.main .grid-container .article:first-of-type .report:hover {
+  background-color: #303782;
+}
+.main .grid-container .article:first-of-type .report img {
+  width: 4em;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.main .grid-container .article:first-of-type .report .name {
+  font-size: 0.9rem;
+}
+.main .grid-container .article:first-of-type .report .name .span {
+  display: block;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.main .grid-container .article:first-of-type .links {
+  background-color: hsl(235, 46%, 20%); /* Custom color variable */
+  padding: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+.main .grid-container .article:first-of-type .links .link {
+  text-decoration: none;
+  color: whitesmoke;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.main .grid-container .article:first-of-type .links .link:hover {
+  color: hsl(195, 74%, 62%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(2),
+.main .grid-container .article:nth-of-type(3),
+.main .grid-container .article:nth-of-type(4),
+.main .grid-container .article:nth-of-type(5),
+.main .grid-container .article:nth-of-type(6),
+.main .grid-container .article:nth-of-type(7) {
+  background-repeat: no-repeat;
+  background-position: top right;
+  border-radius: 1em;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.main .grid-container .article:nth-of-type(2):hover,
+.main .grid-container .article:nth-of-type(3):hover,
+.main .grid-container .article:nth-of-type(4):hover,
+.main .grid-container .article:nth-of-type(5):hover,
+.main .grid-container .article:nth-of-type(6):hover,
+.main .grid-container .article:nth-of-type(7):hover {
+  background-color: yellow;
+}
+.main .grid-container .article:nth-of-type(2) .container,
+.main .grid-container .article:nth-of-type(3) .container,
+.main .grid-container .article:nth-of-type(4) .container,
+.main .grid-container .article:nth-of-type(5) .container,
+.main .grid-container .article:nth-of-type(6) .container,
+.main .grid-container .article:nth-of-type(7) .container {
+  margin-top: auto;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0 2em;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  background-color: hsl(235, 46%, 20%); /* Custom color variable */
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.main .grid-container .article:nth-of-type(2) .container:hover,
+.main .grid-container .article:nth-of-type(3) .container:hover,
+.main .grid-container .article:nth-of-type(4) .container:hover,
+.main .grid-container .article:nth-of-type(5) .container:hover,
+.main .grid-container .article:nth-of-type(6) .container:hover,
+.main .grid-container .article:nth-of-type(7) .container:hover {
+  background-color: #303782;
+  transform: translateY(-2.75rem);
+}
+.main .grid-container .article:nth-of-type(2) .container .activity-tab,
+.main .grid-container .article:nth-of-type(2) .container .time-tab,
+.main .grid-container .article:nth-of-type(3) .container .activity-tab,
+.main .grid-container .article:nth-of-type(3) .container .time-tab,
+.main .grid-container .article:nth-of-type(4) .container .activity-tab,
+.main .grid-container .article:nth-of-type(4) .container .time-tab,
+.main .grid-container .article:nth-of-type(5) .container .activity-tab,
+.main .grid-container .article:nth-of-type(5) .container .time-tab,
+.main .grid-container .article:nth-of-type(6) .container .activity-tab,
+.main .grid-container .article:nth-of-type(6) .container .time-tab,
+.main .grid-container .article:nth-of-type(7) .container .activity-tab,
+.main .grid-container .article:nth-of-type(7) .container .time-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.main .grid-container .article:nth-of-type(2) .container .activity-tab img,
+.main .grid-container .article:nth-of-type(3) .container .activity-tab img,
+.main .grid-container .article:nth-of-type(4) .container .activity-tab img,
+.main .grid-container .article:nth-of-type(5) .container .activity-tab img,
+.main .grid-container .article:nth-of-type(6) .container .activity-tab img,
+.main .grid-container .article:nth-of-type(7) .container .activity-tab img {
+  height: 0.3em;
+}
+.main .grid-container .article:nth-of-type(2) .container .time-tab,
+.main .grid-container .article:nth-of-type(3) .container .time-tab,
+.main .grid-container .article:nth-of-type(4) .container .time-tab,
+.main .grid-container .article:nth-of-type(5) .container .time-tab,
+.main .grid-container .article:nth-of-type(6) .container .time-tab,
+.main .grid-container .article:nth-of-type(7) .container .time-tab {
+  font-size: 1.75rem;
+  display: flex;
+}
+.main .grid-container .article:nth-of-type(2) .container .time-tab .total-time,
+.main .grid-container .article:nth-of-type(3) .container .time-tab .total-time,
+.main .grid-container .article:nth-of-type(4) .container .time-tab .total-time,
+.main .grid-container .article:nth-of-type(5) .container .time-tab .total-time,
+.main .grid-container .article:nth-of-type(6) .container .time-tab .total-time,
+.main .grid-container .article:nth-of-type(7) .container .time-tab .total-time {
+  font-size: 0.8rem;
+  color: hsl(236, 100%, 87%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(2) {
+  background-image: url("../images/icon-work.svg");
+  background-color: hsl(15, 100%, 70%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(3) {
+  background-image: url("../images/icon-play.svg");
+  background-color: hsl(195, 74%, 62%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(4) {
+  background-image: url("../images/icon-study.svg");
+  background-color: hsl(348, 100%, 68%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(5) {
+  background-image: url("../images/icon-exercise.svg");
+  background-color: hsl(145, 58%, 55%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(6) {
+  background-image: url("../images/icon-social.svg");
+  background-color: hsl(264, 64%, 52%); /* Custom color variable */
+}
+.main .grid-container .article:nth-of-type(7) {
+  background-image: url("../images/icon-self-care.svg");
+  background-color: hsl(43, 84%, 65%); /* Custom color variable */
+}
+
+@media (min-width: 38rem) {
+  .main .grid-container {
+    max-width: 960px; /* Set a max-width for the grid container */
+    margin: 0 auto;
+    gap: 1.25em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr; /* Set two rows for the grid container */
+    align-items: center;
+    justify-items: center; /* adjusted */
+  }
+  .main .grid-container article {
+    width: 13rem;
+    height: 13rem;
+    grid-row: span 2; /* Set the default grid row value for all articles */
+  }
+  .main .grid-container .article:first-of-type {
+    grid-row: span 4; /* Make the first article span two rows */
+    height: 100%;
+    width: 12rem;
+  }
+  .main .grid-container .article:first-of-type .report {
+    flex-direction: column;
+    flex: 2;
+    padding: 1em;
+    align-items: start;
+    padding: 2em 1em;
+  }
+  .main .grid-container .article:first-of-type .report .name {
+    font-size: 0.7rem;
+  }
+  .main .grid-container .article:first-of-type .report .name .span {
+    display: block;
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0.25em;
+    color: whitesmoke;
+  }
+  .main .grid-container .article:first-of-type .links {
+    flex-direction: column;
+    flex: 1;
+    font-size: 0.85rem;
+  }
+  .main .grid-container .article:nth-of-type(2),
+  .main .grid-container .article:nth-of-type(3),
+  .main .grid-container .article:nth-of-type(4),
+  .main .grid-container .article:nth-of-type(5),
+  .main .grid-container .article:nth-of-type(6),
+  .main .grid-container .article:nth-of-type(7) {
+    /* You can add specific styling for the other articles if needed */
+  }
+  .main .grid-container .article:nth-of-type(2) .container,
+  .main .grid-container .article:nth-of-type(3) .container,
+  .main .grid-container .article:nth-of-type(4) .container,
+  .main .grid-container .article:nth-of-type(5) .container,
+  .main .grid-container .article:nth-of-type(6) .container,
+  .main .grid-container .article:nth-of-type(7) .container {
+    padding: 0 1em;
+  }
+  .main .grid-container .article:nth-of-type(2) .container .time-tab,
+  .main .grid-container .article:nth-of-type(3) .container .time-tab,
+  .main .grid-container .article:nth-of-type(4) .container .time-tab,
+  .main .grid-container .article:nth-of-type(5) .container .time-tab,
+  .main .grid-container .article:nth-of-type(6) .container .time-tab,
+  .main .grid-container .article:nth-of-type(7) .container .time-tab {
+    font-size: 2.5rem;
+    flex-direction: column;
+    align-items: self-start;
+    text-align: left;
+  }
+  .main .grid-container .article:nth-of-type(2) .container .time-tab .total-time,
+  .main .grid-container .article:nth-of-type(3) .container .time-tab .total-time,
+  .main .grid-container .article:nth-of-type(4) .container .time-tab .total-time,
+  .main .grid-container .article:nth-of-type(5) .container .time-tab .total-time,
+  .main .grid-container .article:nth-of-type(6) .container .time-tab .total-time,
+  .main .grid-container .article:nth-of-type(7) .container .time-tab .total-time {
+    font-size: 0.65rem;
+    color: hsl(236, 100%, 87%); /* Custom color variable */
+  }
+}/*# sourceMappingURL=styles.css.map */
